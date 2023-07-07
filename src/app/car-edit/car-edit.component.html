@@ -1,0 +1,46 @@
+<div>
+  <form (ngSubmit)="saveChanges()" #editForm="ngForm">
+    <div>
+      <label>ID:</label>
+      <input type="text" name="id" [(ngModel)]="car!.id" disabled />
+    </div>
+    <div>
+      <label>CAR:</label>
+      <input type="text" name="carId" [(ngModel)]="car!.carId" disabled />
+    </div>
+    <div>
+      <label>INSTOCK:</label>
+      <input type="checkbox" name="inStock" [(ngModel)]="car!.inStock" />
+    </div>
+    <div>
+      <label>HP:</label>
+      <input
+        type="number"
+        name="horsepower"
+        [(ngModel)]="car!.horsepower"
+        min="100"
+        max="550"
+      />
+    </div>
+    <div>
+      <label>PRICE:</label>
+      <input type="number" name="price" [(ngModel)]="car!.price" />
+    </div>
+    <div>
+      <label>COLOR:</label>
+      <select [(ngModel)]="car!.color" name="color">
+        <option *ngFor="let color of colors" [value]="color">
+          {{ color }}
+        </option>
+      </select>
+    </div>
+    <div>
+      <button class="cancelButton" type="button" (click)="cancel()">
+        Cancel
+      </button>
+      <button class="submitButton" type="submit" [disabled]="!editForm.valid">
+        Save
+      </button>
+    </div>
+  </form>
+</div>

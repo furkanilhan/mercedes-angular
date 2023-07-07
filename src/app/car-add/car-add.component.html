@@ -1,0 +1,29 @@
+<form (ngSubmit)="onSubmit()" #addForm="ngForm">
+    <div>
+      <label>CAR:</label>
+      <input type="text" name="carId" [(ngModel)]="carId" disabled>
+    </div>
+    <div>
+      <label>INSTOCK:</label>
+      <input type="checkbox" name="inStock" [(ngModel)]="inStock">
+    </div>
+    <div>
+      <label>HP:</label>
+      <input type="number" name="horsepower" [(ngModel)]="horsepower" min="60" maks="500">
+    </div>
+    <div>
+      <label>PRICE:</label>
+      <input type="number" name="price" [(ngModel)]="price">
+    </div>
+    <div>
+      <label>COLOR:</label>
+      <select [(ngModel)]="color" name="color">
+        <option *ngFor="let color of colors" [value]="color">{{ color }}</option>
+      </select>
+    </div>
+    <div>
+      <button class="cancelButton" type="button" (click)="cancel()">Cancel</button>
+      <button class="submitButton" type="submit" [disabled]="!addForm.valid">Save</button>
+    </div>
+</form>
+  

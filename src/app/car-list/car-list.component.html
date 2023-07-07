@@ -1,0 +1,56 @@
+<div class="grid-container">
+  <div class="header">
+    <div class="logo-container">
+      <img src="assets/MB-star_n_web.svg" alt="Mercedes Logo" class="logo" />
+    </div>
+  </div>
+  <div class="list">
+    <div>
+      <button routerLink="/car-add" class="blackButton">Add New Car</button>
+    </div>
+    <table id="cars">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>CARID</th>
+          <th>INSTOCK</th>
+          <th>HP</th>
+          <th>PRICE</th>
+          <th>COLOR</th>
+          <th>EDIT</th>
+          <th>REMOVE</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let car of cars">
+          <td>{{ car.id }}</td>
+          <td>{{ car.carId }}</td>
+          <td>{{ car.inStock ? "Yes" : "No" }}</td>
+          <td>{{ car.horsepower }}</td>
+          <td>{{ car.price | currency }}</td>
+          <td>
+            <span
+              class="colorSpan"
+              [ngStyle]="{
+                padding: '5px',
+                'border-radius': '5px',
+                'background-color': car.color,
+                color:
+                  car.color == 'White' || car.color == 'Yellow'
+                    ? 'black'
+                    : 'white'
+              }"
+              >{{ car.color }}</span
+            >
+          </td>
+          <td>
+            <button class="blackButton" (click)="editCar(car.id)">Edit</button>
+          </td>
+          <td>
+            <button class="blackButton" (click)="removeCar(car)">Remove</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

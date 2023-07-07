@@ -1,24 +1,26 @@
-.header { grid-area: header;}
+.header {
+  grid-area: header;
+}
 .logo-container {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
-  }
-  
-  .logo {
-    width: 112px;
-    height: 112px;
-  }
-.list { 
-    overflow-x: auto;
-    grid-area: main; 
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.logo {
+  width: 112px;
+  height: 112px;
+}
+.list {
+  overflow-x: auto;
+  grid-area: main;
 }
 
 .grid-container {
   display: grid;
   grid-template-areas:
-    'header header header header header header'
-    'main main main main main main';
+    "header header header header header header"
+    "main main main main main main";
   gap: 10px;
   padding: 10px;
 }
@@ -31,37 +33,66 @@
 }
 
 #cars {
-    font-family: Arial, Helvetica, sans-serif;
-    border-collapse: collapse;
-    width: 100%;
-  }
-  
-  #cars td, #cars th {
-    text-align: left;
-    padding: 12px;
-  }
-  
-  #cars tr:nth-child(even){background-color: #f2f2f2;}
-  
-  #cars tr:hover {background-color: #ddd;}
-  
-  #cars th {
-    padding-top: 12px;
-    padding-bottom: 12px;
-    text-align: left;
-    background-color: #000000;
-    color: white;
-  }
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
 
-  .blackButton{
-    width: 100%;
-    background-color: #000000;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-weight: bold;
-    font-size: 18px;
-  }
+#cars td,
+#cars th {
+  text-align: left;
+  padding: 12px;
+}
+
+#cars tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+#cars tr:hover {
+  background-color: #ddd;
+}
+
+#cars th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #000000;
+  color: white;
+}
+
+.blackButton {
+  width: 100%;
+  background-color: #000000;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.blackButton:hover,
+.addButton:hover {
+  background-color: #000000cd;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: flex-end;
+  margin: 10px;
+}
+
+.addButton {
+  width: 250px;
+  background-color: #000000;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 18px;
+}
